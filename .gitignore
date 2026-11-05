@@ -3,7 +3,7 @@ node_modules/
 dist/
 
 # The impeccable launcher downloads a checksum-verified engine into ~/.impeccable/bin when this is missing.
-.agents/skills/impeccable/scripts/bin/
+**/skills/impeccable/scripts/bin/
 
 # impeccable-ignore-start
 # Ephemeral output, runtime state, and per-dev overrides.

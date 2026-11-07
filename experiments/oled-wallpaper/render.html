@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Wallpaper renderer (headless entry)</title>
+<script type="importmap">
+{
+  "imports": {
+    "three": "/node_modules/three/build/three.module.js",
+    "three/webgpu": "/node_modules/three/build/three.webgpu.js",
+    "three/tsl": "/node_modules/three/build/three.tsl.js",
+    "three/examples/jsm/": "/node_modules/three/examples/jsm/",
+    "three-mesh-bvh": "/node_modules/three-mesh-bvh/src/index.js",
+    "three-mesh-bvh/webgpu": "/node_modules/three-mesh-bvh/src/webgpu/index.js",
+    "three-gpu-pathtracer/webgpu": "/node_modules/three-gpu-pathtracer/src/webgpu/index.js",
+    "three-gpu-pathtracer/": "/node_modules/three-gpu-pathtracer/"
+  }
+}
+</script>
+</head>
+<body>
+<script type="module">
+  import { encodePng, render, versions } from './src/render.js';
+
+  const toBase64 = (blob) => new Promise((done) => {
+    const fr = new FileReader();
+    fr.onload = () => done(fr.result.slice(fr.result.indexOf(',') + 1));
+    fr.readAsDataURL(blob);
+  });
+
+  // The CLI's way in. Errors carry a `code` the CLI turns into an exit code.
+  window.wallpaper = {
+    versions,
+    async render(params, opts) {
+      try {
+        const r = await render(params, opts);
+        return { ok: true, png: await toBase64(await encodePng(r.rgba, r.width, r.height)), stats: r.stats };
+      } catch (e) {
+        return { ok: false, error: e.message, code: e.code ?? 1 };
+      }
+    },
+  };
+  window.wallpaperReady = true;
+</script>
+</body>
+</html>

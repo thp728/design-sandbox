@@ -1,0 +1,13 @@
+{
+  "description": "Monochrome graphite metal, close to Apple's Pro Black.",
+  "lock": ["material.*", "light.*.kelvin"],
+  "values": {
+    "material.kind": "metal",
+    "material.hue": 220,
+    "material.saturation": 0.05,
+    "material.value": 0.62,
+    "material.roughness": 0.22,
+    "light.0.kelvin": 6500,
+    "light.1.kelvin": 6500
+  }
+}

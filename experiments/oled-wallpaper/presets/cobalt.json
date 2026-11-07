@@ -1,0 +1,11 @@
+{
+  "description": "Saturated blue gloss with a white rim. The default look.",
+  "lock": ["material.*"],
+  "values": {
+    "material.kind": "gloss",
+    "material.hue": 222,
+    "material.saturation": 0.92,
+    "material.value": 0.8,
+    "material.roughness": 0.14
+  }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; }
+  .wrap { display: grid; gap: 18px; font-family: var(--font-sans); }
+  .lede { font-size: 13px; color: var(--muted-foreground); line-height: 1.5; margin: 0; }
+  .group h2 { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted-foreground); margin: 0 0 8px; font-weight: 600; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: grid; gap: 6px; align-content: start; }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .name { font-weight: 600; font-size: 14px; }
+  .note { font-size: 12.5px; line-height: 1.45; color: var(--muted-foreground); }
+  .pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .strong { background: color-mix(in oklab, var(--success) 18%, transparent); color: var(--success); }
+  .maybe  { background: color-mix(in oklab, var(--info) 18%, transparent); color: var(--info); }
+  .poor   { background: color-mix(in oklab, var(--muted-foreground) 16%, transparent); color: var(--muted-foreground); }
+  .facts { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 8px; }
+  .facts div { font-size: 12.5px; line-height: 1.45; }
+  .facts b { color: var(--foreground); }
+  .k { color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="lede">Web graphics options for a static OLED wallpaper, grouped by layer. The pill rates fit for this job: one still image, rendered once at native resolution, where most pixels must be exact black.</p>
+
+  <div class="facts">
+    <div><b>Target.</b> <span class="k">The OLED MacBook Pro ships Nov 6, 2026: 3024 × 1986 (14") or 3472 × 2266 (16"), with a camera cutout and Dynamic Island at the top centre.</span></div>
+    <div><b>Output.</b> <span class="k">macOS wallpaper takes PNG, HEIC, JPEG or TIFF. Users report HDR files showing as SDR, so plan for an 8-bit SDR PNG.</span></div>
+    <div><b>Main risk.</b> <span class="k">Near-black falloff bands badly at 8 bits. The fix is to render in float and dither at the final quantise.</span></div>
+  </div>
+
+  <div class="group">
+    <h2>GPU APIs</h2>
+    <div class="cards">
+      <div class="card"><div class="top"><span class="name">WebGL 2</span><span class="pill strong">strong</span></div><div class="note">Runs everywhere. Float render targets via EXT_color_buffer_float. Plenty for a fragment-shader render.</div></div>
+      <div class="card"><div class="top"><span class="name">WebGPU</span><span class="pill maybe">possible</span></div><div class="note">Default in Chrome, Safari 26 and Firefox on Apple Silicon. Compute shaders help particle or path-traced work. HDR canvas is moot for an SDR file.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>3D libraries and engines</h2>
+    <div class="cards">
+      <div class="card"><div class="top"><span class="name">three.js r187</span><span class="pill strong">strong</span></div><div class="note">WebGLRenderer, or WebGPURenderer with TSL node shaders. Pick it if the piece is a lit 3D scene.</div></div>
+      <div class="card"><div class="top"><span class="name">three-gpu-pathtracer</span><span class="pill strong">strong</span></div><div class="note">Accumulates samples over seconds or minutes. Too slow for live, which doesn't matter for a still. Real soft light falling into black.</div></div>
+      <div class="card"><div class="top"><span class="name">OGL, twgl, regl</span><span class="pill maybe">possible</span></div><div class="note">Thin helpers, 28 to 39 KB. Less boilerplate than raw WebGL. OGL and regl haven't shipped since 2025, regl is WebGL 1 only.</div></div>
+      <div class="card"><div class="top"><span class="name">Babylon.js, PlayCanvas</span><span class="pill poor">poor</span></div><div class="note">Full game engines, 0.6 to 1.8 MB. Their editors and physics do nothing for one still image.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>Shader-first tools</h2>
+    <div class="cards">
+      <div class="card"><div class="top"><span class="name">Raw fragment shader</span><span class="pill strong">strong</span></div><div class="note">Shadertoy style: one shader per pixel, SDF raymarching or fields. Full control over every black pixel.</div></div>
+      <div class="card"><div class="top"><span class="name">Lygia</span><span class="pill strong">strong</span></div><div class="note">Shader function library in GLSL and WGSL: noise, SDFs, colour, dithering. Pairs with any option here.</div></div>
+      <div class="card"><div class="top"><span class="name">Shader Park</span><span class="pill maybe">possible</span></div><div class="note">SDF shapes from a p5-like JS API, no GLSL. Fast to sketch with, but less control over the final output.</div></div>
+      <div class="card"><div class="top"><span class="name">Hydra</span><span class="pill poor">poor</span></div><div class="note">Live-coded video synth for performance. Its whole point is motion.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>2D and vector</h2>
+    <div class="cards">
+      <div class="card"><div class="top"><span class="name">SVG</span><span class="pill maybe">possible</span></div><div class="note">Crisp at any size, exact #000 for free. Weak at glow and soft light, and its filters band.</div></div>
+      <div class="card"><div class="top"><span class="name">Canvas 2D, p5.js</span><span class="pill maybe">possible</span></div><div class="note">Good for line work and generative patterns. CPU-bound, and gradients are 8-bit.</div></div>
+      <div class="card"><div class="top"><span class="name">PixiJS</span><span class="pill poor">poor</span></div><div class="note">2D sprite renderer for games. Nothing here needs sprites.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>Export to a file</h2>
+    <div class="cards">
+      <div class="card"><div class="top"><span class="name">toBlob PNG + dither</span><span class="pill strong">strong</span></div><div class="note">Render to a float target, dither once into 8-bit, save. The simplest path to a wallpaper file.</div></div>
+      <div class="card"><div class="top"><span class="name">16-bit PNG master</span><span class="pill maybe">possible</span></div><div class="note">readPixels from the float target, encoded in JS. A lossless master to regrade later. macOS shows it at 8 bits.</div></div>
+      <div class="card"><div class="top"><span class="name">Headless render</span><span class="pill maybe">possible</span></div><div class="note">Playwright drives the page and saves the file. Repeatable seeds and sizes from one command. More setup than a button.</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

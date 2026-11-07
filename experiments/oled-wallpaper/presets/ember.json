@@ -1,0 +1,13 @@
+{
+  "description": "Warm orange satin under warm light.",
+  "lock": ["material.*", "light.*.kelvin"],
+  "values": {
+    "material.kind": "satin",
+    "material.hue": 18,
+    "material.saturation": 0.88,
+    "material.value": 0.85,
+    "material.roughness": 0.45,
+    "light.0.kelvin": 3400,
+    "light.1.kelvin": 4200
+  }
+}

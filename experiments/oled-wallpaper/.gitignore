@@ -1,0 +1,17 @@
+# Standard web ignores, so the folder stands on its own
+node_modules/
+dist/
+build/
+.cache/
+coverage/
+test-results/
+playwright-report/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Renders, and a reference sheet of Apple and Nothing artwork
+out/
+research/stock-wallpapers.png

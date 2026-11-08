@@ -18,12 +18,39 @@ Observed on 2026-11-07, with likes as of that day.
 - [@guerriero_se](https://x.com/guerriero_se/status/2118730878905979040), dot-matrix icons. 10 s video, 41 likes. Pixel icons on a dot grid morph into each other. Study one shared grid of dots that every icon is drawn from. Here that's each dot easing between on and off, staggered by its distance from a point.
 - [@pulpxstyle](https://x.com/pulpxstyle/status/2118622125745688911), dusty gradient swatches. Image, 180 likes. Collections of muted, dusty gradients. Study low-saturation palettes, and grain that stops gradients from banding. Here that's gradients in OKLCH with a fine noise layer.
 
+
+### Saved references, imported 2026-11-08
+
+Publication dates come from the saved-content inventory. Save dates are unavailable. Descriptions come from post text; media has not been inspected for this import.
+
+- [@uixhassan](https://x.com/uixhassan/status/2118678534486896830), 2026-11-06, media, also liked: "Stop using boring backgrounds for your websites. Made these 4K high-resolution backgrounds for designers and developers. 100% free." Source: X bookmarks. Why: design sandbox reference. Inventory #4. Technique not yet observed.
+- [@emilkowalski](https://x.com/emilkowalski/status/2118332860457197788), 2026-11-05, media: "Really happy with how these animated icons turned out for a new thing I'm working on. I combined @theo's 'council' skill with my design and animation agent skills". Source: X bookmarks. Why: design reference, the animated icons. Inventory #6. Technique not yet observed.
+- [@lydia_shann](https://x.com/lydia_shann/status/2117116754803515459), 2026-11-02, media: "Playing with folder animations for a design hub". Source: X bookmarks. Why: design reference. Inventory #8. Technique not yet observed.
+- [@felixleezd](https://x.com/felixleezd/status/1721912699817533585), 2023-11-07, media: "my favorite mind-blowing sites on the internet for design inspiration: curated.design, land-book.com ..." Source: X bookmarks. Why: design references, probably. Inventory #52. Curated design-inspiration directories; technique not yet observed.
+- [@kshvbgde](https://x.com/kshvbgde/status/2117502283894362219), 2026-11-03, media: "deleting your account can be hot, quite literally." Source: X likes. Why: design reference. Inventory #78. Technique not yet observed.
+- [@jh3yy](https://x.com/jh3yy/status/2116659410680369210), 2026-10-31, media: "trick or treat". Source: X likes. Why: design reference. Inventory #85. Technique not yet observed.
+- [@textrnr](https://x.com/textrnr/status/2116924106616529315), 2026-11-01, media: four images, no text. Source: X likes. Why: design reference. Inventory #86. Technique not yet observed.
+- [@stackedlol](https://x.com/stackedlol/status/2116968625361834176), 2026-11-01, media: "branded carousel animation for @przmflw". Source: X likes. Why: design reference. Inventory #87. Technique not yet observed.
+- [@kshvbgde](https://x.com/kshvbgde/status/2116436274253029417), 2026-10-31, media: "some details that burned through my weekly usage." Source: X likes. Why: design reference. Inventory #88. Technique not yet observed.
+- [@jh3yy](https://x.com/jh3yy/status/2116321049851908266), 2026-10-31, media: "emoji picker sphere: two-axis css scroll-driven animation spins a 3D globe ..." Source: X likes. Why: design reference. Jhey Tompkins' site, [jhey.dev](https://www.jhey.dev), is a reference too, and so is each of its prototypes, such as refractive-gem, pluckable-grid and portal-gesture-icon. Inventory #90. Study CSS scroll-driven rotation on two axes.
+- [@emilkowalski](https://x.com/emilkowalski/status/2115789995860517254), 2026-10-29, media: "Made myself an interaction lab. It's a system that generates new interactions for me on a daily basis ..." Source: X likes. Why: design reference. Inventory #92. Technique not yet observed.
+- [@haaarshsingh](https://x.com/haaarshsingh/status/2105719659282461137), 2026-10-01, media: "i recreated this interaction and now every other table on the internet looks like an excel sheet ..." Source: X likes. Why: design reference. Inventory #101. Technique not yet observed.
+- [@nateparrott](https://x.com/nateparrott/status/2093551753459290197), 2026-08-29, media: "I had a stupid idea for a text editor where all the formatting controls were continuous and scrubbable ..." Source: X likes. Why: design reference. Inventory #146. Technique not yet observed.
+- [@YousufSoomroDev](https://x.com/YousufSoomroDev/status/2087932547493941489), 2026-08-13, media: "This carousel's only half done and i'm already too attached to open-source it ..." Source: X likes. Why: design reference. Inventory #152. Technique not yet observed.
+- [@itskasturiii](https://x.com/itskasturiii/status/2086230581080478071), 2026-08-08, media: "If you're out of ideas for loaders, I've open sourced text streaming, in-line loaders and image loaders." Source: X likes. Why: design reference. Inventory #156. Technique not yet observed.
+- [@Aurelien_Gz](https://x.com/Aurelien_Gz/status/1998860574051250197), 2025-12-10, media: "forget apple's liquid glass... here comes reflective chrome ui". Source: X likes. Why: design reference. Inventory #170. Technique not yet observed.
+
 ## Accounts
 
 - [@jh3yy](https://x.com/jh3yy): one interaction per clip, with the CSS or JS trick in the post text. "many can build it. few can explain it."
 - [@iamncdai](https://x.com/iamncdai): ships each experiment as an installable shadcn registry component, with an open-source portfolio.
 - [@zzzzshawn](https://x.com/zzzzshawn): design engineer, posting past-work reels and SVG experiments.
 - [@sofianedesign](https://x.com/sofianedesign): not yet observed.
+
+
+- [Jhey Tompkins](https://www.jhey.dev), prototypes including refractive-gem, pluckable-grid and portal-gesture-icon. Source: X likes, published 2026-10-31; imported 2026-11-08 from inventory #90. Why: the site and its prototypes are design references too. Technique not yet observed for those prototypes.
+- [Emil Kowalski's interaction lab](https://x.com/emilkowalski/status/2115789995860517254). Source: X likes, published 2026-10-29; imported 2026-11-08 from inventory #92. Why: design reference. Destination is the saved announcement; lab URL and technique not yet observed.
+- [Ibelick's component canvas](https://x.com/Ibelick/status/2109963466182381692). Source: X likes, published 2026-10-13; imported 2026-11-08 from inventory #97. Why: useful for design breakdowns on the personal site; also tracked as a skill in the media digest. Destination is the saved announcement; technique not yet observed.
 
 ## What these posts share
 
